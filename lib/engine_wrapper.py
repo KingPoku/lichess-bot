@@ -622,7 +622,7 @@ def get_homemade_engine(name: str) -> type[MinimalEngine]:
     for SmartBot or other custom engines.
     """
     import homemade  # noqa: PLC0415
-    from test_bot import homemade as test_homemade  # noqa: PLC0415
+    from lib import homemade_engines as test_homemade  # noqa: PLC0415
 
     engine: type[MinimalEngine]
 

@@ -1,65 +1,121 @@
+# ♟️ SmartBot – Lichess Minimax Chess Engine
+
 <div align="center">
 
-  ![lichess-bot](https://github.com/lichess-bot-devs/lichess-bot-images/blob/main/lichess-bot-icon-400.png)
+**A classical AI chess engine built with Minimax and Alpha-Beta Pruning**
 
-  <h1>lichess-bot</h1>
-
-  A bridge between [lichess.org](https://lichess.org) and bots.
-  <br>
-  <strong>[Explore lichess-bot docs »](https://github.com/lichess-bot-devs/lichess-bot/wiki)</strong>
-  <br>
-  <br>
-  [![Python Build](https://github.com/lichess-bot-devs/lichess-bot/actions/workflows/python-build.yml/badge.svg)](https://github.com/lichess-bot-devs/lichess-bot/actions/workflows/python-build.yml)
-  [![Python Test](https://github.com/lichess-bot-devs/lichess-bot/actions/workflows/python-test.yml/badge.svg)](https://github.com/lichess-bot-devs/lichess-bot/actions/workflows/python-test.yml)
-  [![Mypy](https://github.com/lichess-bot-devs/lichess-bot/actions/workflows/mypy.yml/badge.svg)](https://github.com/lichess-bot-devs/lichess-bot/actions/workflows/mypy.yml)
+[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
+[![Lichess](https://img.shields.io/badge/Lichess-Bot%20API-green.svg)](https://lichess.org/api)
+[![Algorithm](https://img.shields.io/badge/Algorithm-Minimax-orange.svg)]()
 
 </div>
 
-## Overview
+---
 
-[lichess-bot](https://github.com/lichess-bot-devs/lichess-bot) is a free bridge
-between the [Lichess Bot API](https://lichess.org/api#tag/Bot) and chess engines.
+## 📖 Overview
 
-With lichess-bot, you can create and operate a bot on lichess. Your bot will be able to play against humans and bots alike, and you will be able to view these games live on lichess.
+SmartBot is a chess-playing AI built as a homemade engine on top of the [lichess-bot](https://github.com/lichess-bot-devs/lichess-bot) framework. The project focuses on **classical AI techniques** rather than machine learning approaches.
 
-See also the lichess-bot [documentation](https://github.com/lichess-bot-devs/lichess-bot/wiki) for further usage help.
+At its core, SmartBot uses the **Minimax algorithm with Alpha-Beta Pruning** to search the game tree and select strong moves under time constraints. The engine demonstrates how traditional search algorithms can produce competent chess play through careful optimization and heuristic evaluation.
 
-## Features
-Supports:
-- Every variant and time control
-- UCI, XBoard, and Homemade engines
-- Matchmaking (challenging other bots)
-- Offering Draws and Resigning
-- Participating in tournaments
-- Accepting move takeback requests from opponents
-- Saving games as PGN
-- Local & Online Opening Books
-- Local & Online Endgame Tablebases
+### 🎮 Capabilities
 
-Can run on:
-- Python 3.9 and later
-- Windows, Linux and MacOS
-- Docker
+The bot is fully integrated with the Lichess Bot API, allowing it to:
 
-## Steps
-1. [Install lichess-bot](https://github.com/lichess-bot-devs/lichess-bot/wiki/How-to-Install)
-2. [Create a lichess OAuth token](https://github.com/lichess-bot-devs/lichess-bot/wiki/How-to-create-a-Lichess-OAuth-token)
-3. [Setup the engine](https://github.com/lichess-bot-devs/lichess-bot/wiki/Setup-the-engine)
-4. [Configure lichess-bot](https://github.com/lichess-bot-devs/lichess-bot/wiki/Configure-lichess-bot)
-5. [Upgrade to a BOT account](https://github.com/lichess-bot-devs/lichess-bot/wiki/Upgrade-to-a-BOT-account)
-6. [Run lichess-bot](https://github.com/lichess-bot-devs/lichess-bot/wiki/How-to-Run-lichess%E2%80%90bot)
+- ♟️ Play rated and unrated games on [lichess.org](https://lichess.org)
+- 🤖 Compete against humans and other bots
+- ⚡ Run continuously using configurable time controls
+- 📊 Track performance metrics and search statistics
 
-## Advanced options
-- [Create a homemade engine](https://github.com/lichess-bot-devs/lichess-bot/wiki/Create-a-homemade-engine)
-- [Add extra customizations](https://github.com/lichess-bot-devs/lichess-bot/wiki/Extra-customizations)
+### 🎓 Academic Context
 
-<br />
+This project was developed as part of an **Artificial Intelligence course**, with emphasis on:
 
-## Acknowledgements
-Thanks to the Lichess team, especially T. Alexander Lystad and Thibault Duplessis for working with the LeelaChessZero team to get this API up. Thanks to [Niklas Fiekas](https://github.com/niklasf) and his [python-chess](https://github.com/niklasf/python-chess) code which allows engine communication seamlessly.
+- ✅ Correct algorithmic implementation
+- ⚡ Performance optimization through pruning
+- 📝 Code clarity and explainability
+- 🏗️ Clean software architecture
+- 🧪 Testable and maintainable design
 
-## License
-lichess-bot is licensed under the AGPLv3 (or any later version at your option). Check out the [LICENSE file](https://github.com/lichess-bot-devs/lichess-bot/blob/master/LICENSE) for the full text.
+---
 
-## Citation
-If this software has been used for research purposes, please cite it using the "Cite this repository" menu on the right sidebar. For more information, check the [CITATION file](https://github.com/lichess-bot-devs/lichess-bot/blob/master/CITATION.cff).
+## 🎯 Project Goals
+
+The main objectives of this project are:
+
+| Goal | Status | Description |
+|------|--------|-------------|
+| **Minimax Implementation** | ✅ Complete | Implement a correct and efficient Minimax-based chess engine |
+| **Alpha-Beta Pruning** | ✅ Complete | Optimize search using alpha-beta pruning and move ordering |
+| **Lichess Integration** | ✅ Complete | Integrate the engine with a real-world platform |
+| **Clean Codebase** | ✅ Complete | Maintain minimal, understandable, and well-documented code |
+| **Future Extensibility** | 🔜 Planned | Prepare for evaluation tuning and advanced features |
+
+---
+
+## 🏗️ Architecture
+
+The project is structured around two main components working together:
+
+### System Diagram
+
+```
+┌─────────────────┐
+│  Lichess.org    │  ← Online chess platform
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────────────────────────┐
+│   lichess-bot Framework             │
+│   • Handles API communication       │
+│   • Manages games & challenges      │
+│   • Provides engine interface       │
+└────────┬────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────────────────┐
+│   SmartBot Engine (minmax_bot.py)  │
+│   • Minimax with Alpha-Beta         │
+│   • Position evaluation             │
+│   • Move ordering                   │
+└─────────────────────────────────────┘
+```
+
+### Component Overview
+
+#### 1️⃣ **lichess-bot Framework**
+- Handles all communication with lichess.org
+- Manages game state, challenges, and API requests
+- Provides a standard interface for chess engines
+- Handles time management and connection stability
+
+#### 2️⃣ **SmartBot Engine** (`minmax_bot.py`)
+- Implements Minimax with Alpha-Beta pruning
+- Evaluates positions using:
+  - Material counting (piece values)
+  - Positional heuristics (piece-square tables)
+  - Mobility assessment (available moves)
+- Decides the best move for each position
+- Tracks performance metrics
+
+### 🎨 Design Benefits
+
+This separation ensures:
+
+- 🔌 **Platform Independence**: Engine logic is decoupled from networking
+- 🔧 **Easy Maintenance**: Improvements don't require touching platform code
+- 📦 **Modularity**: Components can be tested and updated independently
+- 🚀 **Scalability**: Easy to swap engines or add features
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| **Python** | Core programming language | 3.12+ |
+| **python-chess** | Board representation & move generation | Latest |
+| **lichess-bot** | Lichess Bot API integration | Latest |
+| **Minimax Algorithm** | Core game tree search | N/A |
+| **Alpha-Beta Pruning** | Search optimization | N/A |
+
